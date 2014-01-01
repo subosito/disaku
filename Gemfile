@@ -21,6 +21,8 @@ gem 'kaminari'
 gem 'kaminari-bootstrap', '~> 3.0.1'
 gem 'has_scope'
 gem 'devise'
+gem 'rolify'
+gem 'cancan'
 
 group :test do
   gem 'factory_girl_rails'

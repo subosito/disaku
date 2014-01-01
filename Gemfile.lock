@@ -41,6 +41,7 @@ GEM
     bullet (4.7.1)
       activesupport
       uniform_notifier (>= 1.4.0)
+    cancan (1.6.10)
     capistrano (3.0.1)
       i18n
       rake (>= 10.0.0)
@@ -174,6 +175,7 @@ GEM
     rake (10.1.1)
     responders (1.0.0)
       railties (>= 3.2, < 5)
+    rolify (3.2.0)
     rr (1.1.2)
     rspec (2.14.1)
       rspec-core (~> 2.14.0)
@@ -261,6 +263,7 @@ DEPENDENCIES
   binding_of_caller
   bootstrap-sass
   bullet
+  cancan
   capistrano
   capistrano-bundler
   capistrano-rails
@@ -289,6 +292,7 @@ DEPENDENCIES
   pry-rails
   quiet_assets
   rails (= 4.0.2)
+  rolify
   rr
   rspec-rails
   sass-rails
