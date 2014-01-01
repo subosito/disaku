@@ -4,5 +4,5 @@ class Account < ActiveRecord::Base
   belongs_to :user
   has_many :transactions
 
-  enumerize :account_type, in: [:saving, :cash, :other]
+  enumerize :category_type, in: [:income, :expense, :credit]
 end

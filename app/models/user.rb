@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :accounts
+  has_many :categories
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
