@@ -1,45 +1,54 @@
 source 'https://rubygems.org'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
-
-# Use postgresql as the database for Active Record
 gem 'pg'
-
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.0'
-
-# Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
-
-# Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
-
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
-
-# Use jquery as the JavaScript library
+gem 'sass-rails'
+gem 'uglifier'
+gem 'coffee-rails'
 gem 'jquery-rails'
-
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
+gem 'inherited_resources'
+gem 'thin'
+gem 'bootstrap-sass'
+gem 'haml'
+gem 'simple_form'
+gem 'enumerize'
+gem 'navigasmic'
+gem 'page_title_helper'
+gem 'figaro'
+gem 'newrelic_rpm'
+gem 'kaminari'
+gem 'kaminari-bootstrap', '~> 3.0.1'
+gem 'has_scope'
+gem 'devise'
 
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 1.2'
-
-group :doc do
-  # bundle exec rake doc:rails generates the API under doc/api.
-  gem 'sdoc', require: false
+group :test do
+  gem 'factory_girl_rails'
+  gem 'database_cleaner'
+  gem 'shoulda'
+  gem 'capybara'
+  gem 'poltergeist'
+  gem 'launchy'
+  gem 'fuubar'
+  gem 'simplecov', require: false
+  gem 'rr'
 end
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.1.2'
+group :development do
+  gem 'binding_of_caller'
+  gem 'better_errors'
+  gem 'awesome_print'
+  gem 'quiet_assets'
+  gem 'haml-rails'
+  gem 'capistrano'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'mascherano'
+  gem 'bullet'
+end
 
-# Use unicorn as the app server
-# gem 'unicorn'
+group :development, :test do
+  gem 'pry-rails'
+  gem 'rspec-rails'
+end
 
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
