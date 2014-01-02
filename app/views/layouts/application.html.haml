@@ -7,16 +7,11 @@
     = csrf_meta_tags
 
   %body
-    %header.navbar.navbar-inverse.navbar-fixed-top{ role: 'banner' }
+    %header.navbar.navbar-inverse{ role: 'banner' }
       .container
         .navbar-header
-          %button.navbar-toggle{ type: 'button', data: { toggle: 'collapse', target: '.dc-navbar-collapse' } }
-            %span.sr-only Navigation
-            %span.icon-bar
-            %span.icon-bar
-            %span.icon-bar
           = link_to t('app.name'), '#', class: 'navbar-brand'
-        %nav.collapse.navbar-collapse.dc-navbar-collapse{ role: 'navigation' }
+        %nav.collapse.navbar-collapse{ role: 'navigation' }
           = semantic_navigation :main, config: :bootstrap, class: 'navbar-nav'
 
     .container

@@ -1,4 +1,5 @@
-class Account < ActiveRecord::Base
+class Category < ActiveRecord::Base
+  include Accountable
   extend Enumerize
 
   belongs_to :user
