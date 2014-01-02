@@ -20,4 +20,22 @@ class AccountDecorator < ApplicationDecorator
   def balance
     h.to_currency(account.balance)
   end
+
+  def label
+    h.content_tag :span, account.account_type, class: "label #{label_class}"
+  end
+
+  private
+  def label_class
+    case account.account_type
+    when 'saving'
+      'label-primary'
+    when 'cash'
+      'label-success'
+    when 'other'
+      'label-info'
+    else
+      'label-default'
+    end
+  end
 end

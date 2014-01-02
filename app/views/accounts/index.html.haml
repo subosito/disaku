@@ -1,12 +1,14 @@
 %table.table
   %tr
     %th Name
+    %th Account Type
     %th Monthly Income
     %th Montly Expense
     %th Balance
   - accounts.each do |account|
     %tr
       %td= account.name
+      %td= account.label
       %td= account.monthly_income
       %td= account.monthly_expense
       %td= account.balance
