@@ -1,0 +1,26 @@
+!!! 5
+%html
+  %head
+    %title= page_title
+    %meta{name: "viewport", content: "width=device-width, initial-scale=1.0"}
+    = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
+    = csrf_meta_tags
+
+  %body
+    %header.navbar.navbar-inverse.navbar-fixed-top{ role: 'banner' }
+      .container
+        .navbar-header
+          %button.navbar-toggle{ type: 'button', data: { toggle: 'collapse', target: '.dc-navbar-collapse' } }
+            %span.sr-only Navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          = link_to t('app.name'), '#', class: 'navbar-brand'
+        %nav.collapse.navbar-collapse.dc-navbar-collapse{ role: 'navigation' }
+          = semantic_navigation :main, config: :bootstrap, class: 'navbar-nav'
+
+    .container
+      = yield
+
+  = javascript_include_tag "application", "data-turbolinks-track" => true
+

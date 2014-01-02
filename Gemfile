@@ -23,6 +23,8 @@ gem 'has_scope'
 gem 'devise'
 gem 'rolify'
 gem 'cancan'
+gem 'draper'
+gem 'high_voltage'
 
 group :test do
   gem 'factory_girl_rails'
