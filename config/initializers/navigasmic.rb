@@ -29,6 +29,7 @@ Navigasmic.setup do |config|
 
     n.item 'Accounts', proc{ accounts_path }
     n.item 'Categories', proc{ categories_path }
+    n.item 'Transactions', proc{ transactions_path }
     n.item 'Login', proc{ new_user_session_path }
 
     # Groups and Items:
