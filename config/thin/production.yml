@@ -1,0 +1,8 @@
+---
+environment: production
+address: 127.0.0.1
+timeout: 60
+max_conns: 1024
+max_persistent_conns: 100
+require: []
+wait: 30
