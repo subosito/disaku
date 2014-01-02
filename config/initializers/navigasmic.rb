@@ -28,6 +28,7 @@ Navigasmic.setup do |config|
   config.semantic_navigation :main do |n|
 
     n.item 'Accounts', proc{ accounts_path }
+    n.item 'Categories', proc{ categories_path }
     n.item 'Login', proc{ new_user_session_path }
 
     # Groups and Items:
