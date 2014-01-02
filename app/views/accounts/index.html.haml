@@ -1,2 +1,12 @@
-- accounts.each do |account|
-  %strong= account.name
+%table.table
+  %tr
+    %th Name
+    %th Monthly Income
+    %th Montly Expense
+    %th Balance
+  - accounts.each do |account|
+    %tr
+      %td= account.name
+      %td= account.monthly_income
+      %td= account.monthly_expense
+      %td= account.balance

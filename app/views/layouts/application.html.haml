@@ -7,8 +7,8 @@
     = csrf_meta_tags
 
   %body
-    %header.navbar.navbar-inverse{ role: 'banner' }
-      .container
+    .container
+      %header.navbar{ role: 'banner' }
         .navbar-header
           = link_to t('app.name'), '#', class: 'navbar-brand'
         %nav.collapse.navbar-collapse{ role: 'navigation' }
