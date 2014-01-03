@@ -15,6 +15,7 @@
           = semantic_navigation :main, config: :bootstrap, class: 'navbar-nav'
 
     .container
+      = notifications
       = yield
 
   = javascript_include_tag "application", "data-turbolinks-track" => true

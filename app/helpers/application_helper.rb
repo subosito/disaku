@@ -16,4 +16,28 @@ module ApplicationHelper
       @current_user_decorated ||= UserDecorator.decorate(current_user)
     end
   end
+
+  def build_html(assigns = {}, &block)
+    ::Mab::PrettyBuilder.new(assigns, self, &block).to_s.html_safe
+  end
+
+  def notifications
+    return if flash.blank?
+
+    map_classes = {
+      notice: 'alert-success',
+      alert: 'alert-warning'
+    }
+
+    build_html do
+      div class: 'notifications' do
+        flash.each do |name, msg|
+          if msg.is_a? String
+            classes = ['alert', map_classes[name], 'fadeout']
+            div msg, :class => classes.join(' '), 'data-dismiss' => 'alert'
+          end
+        end
+      end
+    end
+  end
 end
