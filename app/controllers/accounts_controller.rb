@@ -17,7 +17,7 @@ class AccountsController < ResourcesController
   protected
   def collection
     get_collection_ivar || begin
-      set_collection_ivar(end_of_association_chain.order(:name))
+      set_collection_ivar(end_of_association_chain.order(:account_type, :name))
     end
   end
 end
