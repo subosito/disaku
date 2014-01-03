@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  include RailsSettings::Extend
+
   has_many :accounts
   has_many :categories
   has_many :transactions, through: :accounts

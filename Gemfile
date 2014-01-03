@@ -26,6 +26,7 @@ gem 'cancan'
 gem 'draper'
 gem 'high_voltage'
 gem 'font-awesome-rails'
+gem 'rails-settings-cached', '>= 0.3.1'
 
 group :test do
   gem 'factory_girl_rails'
