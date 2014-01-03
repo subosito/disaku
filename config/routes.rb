@@ -11,4 +11,6 @@ Disaku::Application.routes.draw do
     resources :transactions
     resources :transfers
   end
+
+  root 'accounts#index'
 end
