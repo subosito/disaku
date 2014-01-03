@@ -13,5 +13,12 @@ class TransfersController < ResourcesController
   def permitted_params
     params.permit(:transfer => [:title, :transfer_date, :from_account_id, :to_account_id, :amount])
   end
+
+  protected
+  def collection
+    get_collection_ivar || begin
+      set_collection_ivar(end_of_association_chain.order(:transfer_date).reverse_order)
+    end
+  end
 end
 

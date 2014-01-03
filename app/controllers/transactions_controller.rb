@@ -13,5 +13,12 @@ class TransactionsController < ResourcesController
   def permitted_params
     params.permit(:transaction => [:title, :account_id, :category_id, :transaction_date, :amount, :comment])
   end
+
+  protected
+  def collection
+    get_collection_ivar || begin
+      set_collection_ivar(end_of_association_chain.order(:transaction_date).reverse_order)
+    end
+  end
 end
 

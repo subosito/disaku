@@ -13,5 +13,12 @@ class CategoriesController < ResourcesController
   def permitted_params
     params.permit(:category => [:name, :category_type])
   end
+
+  protected
+  def collection
+    get_collection_ivar || begin
+      set_collection_ivar(end_of_association_chain.order(:name))
+    end
+  end
 end
 
