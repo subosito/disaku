@@ -14,4 +14,8 @@ class ApplicationDecorator < Draper::Decorator
   def monthly_income
     h.to_currency(object.monthly_income)
   end
+
+  def merge_links(links)
+    links.reject{|el| el.blank? }.join(' ').html_safe
+  end
 end

@@ -25,6 +25,7 @@ gem 'rolify'
 gem 'cancan'
 gem 'draper'
 gem 'high_voltage'
+gem 'font-awesome-rails'
 
 group :test do
   gem 'factory_girl_rails'

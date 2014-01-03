@@ -1,14 +1,18 @@
-= link_to 'New Category', new_category_path, class: 'btn btn-default'
+.col-md-2
+  = link_to 'New Category', new_category_path, class: 'btn btn-default pull-right'
 
-%table.table
-  %tr
-    %th Name
-    %th Category Type
-    %th Monthly Income
-    %th Montly Expense
-  - categories.each do |category|
+.col-md-10
+  %table.table
     %tr
-      %td= category.name
-      %td= category.label
-      %td= category.monthly_income
-      %td= category.monthly_expense
+      %th Name
+      %th Category Type
+      %th Monthly Income
+      %th Montly Expense
+      %th -
+    - categories.each do |category|
+      %tr
+        %td= category.name
+        %td= category.label
+        %td= category.monthly_income
+        %td= category.monthly_expense
+        %td= category.link_to_actions
