@@ -10,4 +10,10 @@ module ApplicationHelper
   def link_to_delete(object, link_path)
     link_to(content_tag(:i, nil, class: 'icon-trash'), link_path, class: 'btn btn-xs btn-danger', method: :delete, confirm: "Are you sure?") if can? :delete, object
   end
+
+  def current_user_decorated
+    if user_signed_in?
+      @current_user_decorated ||= UserDecorator.decorate(current_user)
+    end
+  end
 end

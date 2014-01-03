@@ -18,3 +18,28 @@
         %td= account.monthly_expense
         %td= account.balance
         %td= account.link_to_actions
+
+.col-md-6.col-md-offset-6
+  .jumbotron
+    %h1= current_user_decorated.monthly_due_target
+
+.clearfix
+.col-md-6.col-md-offset-6
+  %table.table.align-right
+    %thead
+      %tr
+        %th{ colspan: 2 }
+          %strong Statistics
+
+    %tbody
+      %tr
+        %td Monthly Income
+        %td= current_user_decorated.monthly_income
+
+      %tr
+        %td Monthly Expense
+        %td= current_user_decorated.monthly_expense
+
+      %tr
+        %td Available Cash
+        %td= current_user_decorated.available_cash
