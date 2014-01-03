@@ -1,5 +1,7 @@
 = simple_form_for category, html: { class: 'form-horizontal' } do |f|
-  = f.input :name
-  = f.input :category_type, include_blank: false
-  .form-actions
+  .row
+    = f.input :name, wrapper_html: { class: 'col-xs-6' }
+  .row
+    = f.input :category_type, include_blank: false, wrapper_html: { class: 'col-xs-4' }
+  .form-group
     = f.button :submit, class: 'btn-primary'
