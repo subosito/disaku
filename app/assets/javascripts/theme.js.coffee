@@ -4,6 +4,7 @@ jQuery ($) ->
     format: "dd-mm-yyyy",
     todayBtn: "linked",
     language: "en",
-    orientation: "top auto"
+    orientation: "top auto",
+    todayHighlight: true
   })
 
