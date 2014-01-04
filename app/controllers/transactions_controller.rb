@@ -14,11 +14,11 @@ class TransactionsController < ResourcesController
     params.permit(:transaction => [:title, :account_id, :category_id, :transaction_date, :amount, :comment])
   end
 
-  protected
-  def collection
-    get_collection_ivar || begin
-      set_collection_ivar(end_of_association_chain.order(:transaction_date).reverse_order)
-    end
+  def default_search_params
+    {
+      :transaction_date_gteq => date_range_start,
+      :transaction_date_lteq => date_range_end
+    }
   end
 end
 

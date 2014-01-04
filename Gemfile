@@ -30,6 +30,8 @@ gem 'font-awesome-rails'
 gem 'rails-settings-cached', '>= 0.3.1'
 gem 'mab'
 gem 'rollbar'
+gem 'ransack'
+gem 'has_scope'
 
 group :test do
   gem 'factory_girl_rails'

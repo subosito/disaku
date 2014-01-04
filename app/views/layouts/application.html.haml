@@ -19,7 +19,6 @@
         .row
           = notifications
 
-        = render partial: 'shared/date_range' if user_signed_in?
         = yield
 
   = javascript_include_tag "application", "data-turbolinks-track" => true

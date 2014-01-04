@@ -158,6 +158,8 @@ GEM
       cliver (~> 0.3.1)
       multi_json (~> 1.0)
       websocket-driver (>= 0.2.0)
+    polyamorous (0.6.4)
+      activerecord (>= 3.0)
     polyglot (0.3.3)
     pry (0.9.12.4)
       coderay (~> 1.0)
@@ -186,6 +188,10 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (10.1.1)
+    ransack (1.1.0)
+      actionpack (>= 3.0)
+      activerecord (>= 3.0)
+      polyamorous (~> 0.6.0)
     request_store (1.0.5)
     responders (1.0.0)
       railties (>= 3.2, < 5)
@@ -314,6 +320,7 @@ DEPENDENCIES
   quiet_assets
   rails (= 4.0.2)
   rails-settings-cached (>= 0.3.1)
+  ransack
   rolify
   rollbar
   rr

@@ -42,7 +42,7 @@ module ApplicationHelper
   end
 
   def format_datepicker(date)
-    date.strftime("%d-%m-%Y")
+    date.strftime("%Y-%m-%d")
   end
 
   def date_range_start_formatted
