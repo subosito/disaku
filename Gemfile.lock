@@ -188,6 +188,8 @@ GEM
     responders (1.0.0)
       railties (>= 3.2, < 5)
     rolify (3.2.0)
+    rollbar (0.12.1)
+      multi_json (~> 1.5)
     rr (1.1.2)
     rspec (2.14.1)
       rspec-core (~> 2.14.0)
@@ -310,6 +312,7 @@ DEPENDENCIES
   rails (= 4.0.2)
   rails-settings-cached (>= 0.3.1)
   rolify
+  rollbar
   rr
   rspec-rails
   sass-rails

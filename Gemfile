@@ -28,6 +28,7 @@ gem 'high_voltage'
 gem 'font-awesome-rails'
 gem 'rails-settings-cached', '>= 0.3.1'
 gem 'mab'
+gem 'rollbar'
 
 group :test do
   gem 'factory_girl_rails'
