@@ -5,19 +5,22 @@ body {
   padding-top: 20px;
 }
 
-#transaction_transaction_date_1i {
+#transaction_transaction_date_1i,
+#transfer_transfer_date_1i {
   width: 80px;
   margin-right: 10px;
   float: left;
 }
 
-#transaction_transaction_date_2i {
+#transaction_transaction_date_2i,
+#transfer_transfer_date_2i {
   width: 150px;
   margin-right: 10px;
   float: left;
 }
 
-#transaction_transaction_date_3i {
+#transaction_transaction_date_3i,
+#transfer_transfer_date_3i {
   width: 70px;
   margin-right: 10px;
   float: left;
