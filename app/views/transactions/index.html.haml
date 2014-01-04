@@ -21,3 +21,6 @@
       %td= transaction.category_name
       %td.text-right= transaction.amount
       %td.text-center= transaction.link_to_actions
+
+.text-center
+  = paginate @transactions
