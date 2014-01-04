@@ -14,6 +14,7 @@
             = link_to t('app.name'), '#', class: 'navbar-brand'
           %nav.collapse.navbar-collapse{ role: 'navigation' }
             = semantic_navigation :main, config: :bootstrap, class: 'navbar-nav'
+            = semantic_navigation :authentication, config: :bootstrap, class: 'navbar-nav navbar-right'
 
         .row
           = notifications

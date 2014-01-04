@@ -20,6 +20,10 @@ class User < ActiveRecord::Base
     monthly_budget - monthly_expense
   end
 
+  def monthly_budget?
+    !monthly_budget.zero?
+  end
+
   def total_balance
     (total_assets + total_income) - total_expense
   end

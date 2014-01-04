@@ -31,8 +31,6 @@ Navigasmic.setup do |config|
     n.item 'Categories', proc{ categories_path }
     n.item 'Transactions', proc{ transactions_path }
     n.item 'Transfers', proc{ transfers_path }
-    n.item 'Login', proc{ new_user_session_path }, hidden_unless: proc { !user_signed_in? }
-    n.item 'Logout', proc{ destroy_user_session_path }, hidden_unless: proc { user_signed_in? }
 
     # Groups and Items:
     #
@@ -72,6 +70,10 @@ Navigasmic.setup do |config|
 
   end
 
+  config.semantic_navigation :authentication do |n|
+    n.item 'Login', proc{ new_user_session_path }, hidden_unless: proc { !user_signed_in? }
+    n.item 'Logout', proc{ destroy_user_session_path }, hidden_unless: proc { user_signed_in? }
+  end
 
   # Setting the Default Builder:
   #

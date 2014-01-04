@@ -1,7 +1,8 @@
 .row
-  .col-md-8.col-md-offset-4
-    .jumbotron.text-center
-      %h1= current_user_decorated.monthly_due_target
+  - if current_user_decorated.monthly_budget?
+    .col-md-8.col-md-offset-4
+      .jumbotron.text-center
+        %h1= current_user_decorated.monthly_due_target
 
   .col-md-6.col-md-offset-6
     %table.table.table-striped
