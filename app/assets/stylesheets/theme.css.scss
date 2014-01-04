@@ -1,8 +1,13 @@
 @import "bootstrap";
 @import "font-awesome";
+@import "bootstrap-datepicker";
 
 body {
   padding-top: 20px;
+}
+
+thead th {
+  text-align: center;
 }
 
 #transaction_transaction_date_1i,
@@ -25,3 +30,4 @@ body {
   margin-right: 10px;
   float: left;
 }
+

@@ -1,0 +1,8 @@
+.row
+  .col-md-6.col-offset-3
+    %form.form-inline.text-center{ role: 'search' }
+      .input-daterange{ data: { behaviour: 'datepicker' } }
+        .col-xs-4
+          %input.form-control{ value: Date.today.beginning_of_month.strftime("%d-%m-%Y") }
+        .col-xs-4
+          %input.form-control{ value: Date.today.end_of_month.strftime("%d-%m-%Y") }

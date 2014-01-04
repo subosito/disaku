@@ -1,45 +1,21 @@
-.col-md-2
-  = link_to 'New Account', new_account_path, class: 'btn btn-default pull-right'
+= link_to 'New Account', new_account_path, class: 'btn btn-default pull-right'
+%hr
 
-.col-md-10
-  %table.table.table-striped
-    %thead
-      %th Name
-      %th Type
-      %th Monthly Income
-      %th Montly Expense
-      %th Balance
-      %th -
-    - accounts.each do |account|
-      %tr
-        %td= account.name
-        %td= account.label
-        %td= account.monthly_income
-        %td= account.monthly_expense
-        %td= account.balance
-        %td= account.link_to_actions
+%table.table.table-striped.table-bordered
+  %thead
+    %th Name
+    %th Type
+    %th Monthly Income
+    %th Montly Expense
+    %th Balance
+    %th -
+  - accounts.each do |account|
+    %tr
+      %td= account.name
+      %td= account.label
+      %td.text-right= account.monthly_income
+      %td.text-right= account.monthly_expense
+      %td.text-right= account.balance
+      %td= account.link_to_actions
 
-.col-md-6.col-md-offset-6
-  .jumbotron
-    %h1= current_user_decorated.monthly_due_target
-
-.clearfix
-.col-md-6.col-md-offset-6
-  %table.table.align-right
-    %thead
-      %tr
-        %th{ colspan: 2 }
-          %strong Statistics
-
-    %tbody
-      %tr
-        %td Monthly Income
-        %td= current_user_decorated.monthly_income
-
-      %tr
-        %td Monthly Expense
-        %td= current_user_decorated.monthly_expense
-
-      %tr
-        %td Available Cash
-        %td= current_user_decorated.available_cash
+= render partial: 'shared/overview'

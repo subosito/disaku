@@ -4,7 +4,7 @@ module ApplicationHelper
   end
 
   def link_to_edit(object, link_path)
-    link_to(content_tag(:i, nil, class: 'icon-pencil'), link_path, class: 'btn btn-xs btn-warning') if can? :edit, object
+    link_to(content_tag(:i, nil, class: 'icon-pencil'), link_path, class: 'btn btn-xs btn-info') if can? :edit, object
   end
 
   def link_to_delete(object, link_path)

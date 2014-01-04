@@ -1,20 +1,19 @@
-.col-md-2
-  = link_to 'New Transfer', new_transfer_path, class: 'btn btn-default pull-right'
+= link_to 'New Transfer', new_transfer_path, class: 'btn btn-default pull-right'
+%hr
 
-.col-md-10
-  %table.table.table-striped
-    %thead
-      %th Date
-      %th Title
-      %th From
-      %th To
-      %th Amount
-      %th -
-    - transfers.each do |transfer|
-      %tr
-        %td= transfer.transfer_date
-        %td= transfer.title
-        %td= transfer.from_account.name
-        %td= transfer.to_account.name
-        %td= transfer.amount
-        %td= transfer.link_to_actions
+%table.table.table-striped.table-bordered
+  %thead
+    %th Date
+    %th Title
+    %th From
+    %th To
+    %th Amount
+    %th -
+  - transfers.each do |transfer|
+    %tr
+      %td= transfer.transfer_date
+      %td= transfer.title
+      %td= transfer.from_account.name
+      %td= transfer.to_account.name
+      %td.text-right= transfer.amount
+      %td= transfer.link_to_actions

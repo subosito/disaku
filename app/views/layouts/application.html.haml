@@ -8,15 +8,18 @@
 
   %body
     .container
-      %header.navbar.navbar-default{ role: 'banner' }
-        .navbar-header
-          = link_to t('app.name'), '#', class: 'navbar-brand'
-        %nav.collapse.navbar-collapse{ role: 'navigation' }
-          = semantic_navigation :main, config: :bootstrap, class: 'navbar-nav'
+      .col-md-10.col-md-offset-1
+        %header.navbar.navbar-default{ role: 'banner' }
+          .navbar-header
+            = link_to t('app.name'), '#', class: 'navbar-brand'
+          %nav.collapse.navbar-collapse{ role: 'navigation' }
+            = semantic_navigation :main, config: :bootstrap, class: 'navbar-nav'
 
-    .container
-      = notifications
-      = yield
+        .row
+          = notifications
+
+        = render partial: 'shared/date_range' if user_signed_in?
+        = yield
 
   = javascript_include_tag "application", "data-turbolinks-track" => true
 

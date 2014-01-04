@@ -1,0 +1,19 @@
+.row
+  .col-md-8.col-md-offset-4
+    .jumbotron.text-center
+      %h1= current_user_decorated.monthly_due_target
+
+  .col-md-6.col-md-offset-6
+    %table.table.table-striped
+      %tbody
+        %tr
+          %td Monthly Income
+          %td.text-right= current_user_decorated.monthly_income
+
+        %tr
+          %td Monthly Expense
+          %td.text-right= current_user_decorated.monthly_expense
+
+        %tr
+          %td Available Cash
+          %td.text-right= current_user_decorated.available_cash
