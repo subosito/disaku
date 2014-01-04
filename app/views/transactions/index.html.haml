@@ -5,17 +5,17 @@
   %thead
     %th Date
     %th Title
+    %th Type
     %th Account
     %th Category
-    %th Type
     %th Amount
     %th -
   - transactions.each do |transaction|
     %tr
       %td= transaction.transaction_date
       %td= transaction.title
+      %td.text-center= transaction.label
       %td= transaction.account_name
       %td= transaction.category_name
-      %td= transaction.label
       %td.text-right= transaction.amount
-      %td= transaction.link_to_actions
+      %td.text-center= transaction.link_to_actions

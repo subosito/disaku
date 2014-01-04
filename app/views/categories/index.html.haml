@@ -11,7 +11,7 @@
   - categories.each do |category|
     %tr
       %td= category.name
-      %td= category.label
+      %td.text-center= category.label
       %td.text-right= category.monthly_income
       %td.text-right= category.monthly_expense
-      %td= category.link_to_actions
+      %td.text-center= category.link_to_actions

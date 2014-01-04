@@ -12,10 +12,10 @@
   - accounts.each do |account|
     %tr
       %td= account.name
-      %td= account.label
+      %td.text-center= account.label
       %td.text-right= account.monthly_income
       %td.text-right= account.monthly_expense
       %td.text-right= account.balance
-      %td= account.link_to_actions
+      %td.text-center= account.link_to_actions
 
 = render partial: 'shared/overview'
