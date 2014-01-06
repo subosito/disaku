@@ -14,6 +14,12 @@ class TransactionsController < ResourcesController
     params.permit(:transaction => [:title, :account_id, :category_id, :transaction_date, :amount, :comment])
   end
 
+  def search_params
+    options     = super
+    options[:s] = 'transaction_date desc'
+    options
+  end
+
   def default_search_params
     {
       :transaction_date_gteq => date_range_start,
