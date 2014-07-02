@@ -33,6 +33,10 @@ gem 'rollbar'
 gem 'ransack'
 gem 'has_scope'
 
+group :production do
+  gem 'rails_12factor'
+end
+
 group :test do
   gem 'factory_girl_rails'
   gem 'database_cleaner'
