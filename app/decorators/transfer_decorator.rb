@@ -12,4 +12,8 @@ class TransferDecorator < ApplicationDecorator
   def link_to_actions
     merge_links([ link_to_edit, link_to_delete ])
   end
+
+  def amount
+    h.to_currency(object.amount)
+  end
 end

@@ -8,13 +8,19 @@
 
   %body
     .container
-      .col-md-10.col-md-offset-1
-        %header.navbar.navbar-default{ role: 'banner' }
-          .navbar-header
-            = link_to t('app.name'), '#', class: 'navbar-brand'
-          %nav.collapse.navbar-collapse{ role: 'navigation' }
-            = semantic_navigation :main, config: :bootstrap, class: 'navbar-nav'
-            = semantic_navigation :authentication, config: :bootstrap, class: 'navbar-nav navbar-right'
+      .col-xs-12
+        %header.navbar.navbar-default{ role: 'navigation' }
+          .container-fluid
+            .navbar-header
+              .button.navbar-toggle{ type: "button", data: { toggle: "collapse", target: "#navbar-collapse" }}
+                %span.sr-only Toggle Navigation
+                %span.icon-bar
+                %span.icon-bar
+                %span.icon-bar
+              = link_to t('app.name'), '#', class: 'navbar-brand'
+            %nav#navbar-collapse.collapse.navbar-collapse
+              = semantic_navigation :main, config: :bootstrap, class: 'navbar-nav'
+              = semantic_navigation :authentication, config: :bootstrap, class: 'navbar-nav navbar-right'
 
         .row
           .col-xs-12
