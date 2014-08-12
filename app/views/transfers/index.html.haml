@@ -3,7 +3,7 @@
 %table.table.table-striped.table-bordered.table-responsive.m-l-t
   %thead
     %th Date
-    %th Title
+    %th.hidden-xs Title
     %th From
     %th To
     %th Amount
@@ -11,7 +11,7 @@
   - transfers.each do |transfer|
     %tr
       %td= transfer.transfer_date
-      %td= transfer.title
+      %td.hidden-xs= transfer.title
       %td= transfer.from_account.name
       %td= transfer.to_account.name
       %td.text-right= transfer.amount
