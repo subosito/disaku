@@ -9,7 +9,7 @@
     = f.association :account, include_blank: false, wrapper_html: { class: 'col-xs-4' }
   .row
     = f.association :category, include_blank: false,
-      collection: current_user.categories.grouped_options_for_select,
+      collection: current_user.categories.order(:name).grouped_options_for_select,
       as: :grouped_select, group_method: :last,
       wrapper_html: { class: 'col-xs-4' }
   .row

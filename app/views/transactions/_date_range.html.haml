@@ -10,10 +10,3 @@
 
 %hr
 
-.row
-  = simple_form_for @search, url: transactions_path, method: :get, html: { class: 'form-inline' } do |f|
-    .col-xs-8
-      = f.input_field :title_cont
-    .col-xs-2
-      = f.button :submit, 'Search', class: 'btn btn-default'
-  .clearfix
