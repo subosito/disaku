@@ -18,8 +18,8 @@
         %td -
         %td= f.input_field :title_cont
         %td -
-        %td= f.input_field :account_name_eq, as: :select, collection: Account.all.order(:name)
-        %td= f.input_field :category_name_eq, as: :select, collection: current_user.categories.order(:name).grouped_options_for_select, as: :grouped_select, group_method: :last
+        %td= f.input_field :account_id_eq, as: :select, collection: Account.all.order(:name)
+        %td= f.input_field :category_id_eq, as: :select, collection: current_user.categories.order(:name).grouped_options_for_select, as: :grouped_select, group_method: :last
         %td -
         %td= f.button :submit, 'Search', class: 'btn btn-default'
   - transactions.each do |transaction|
