@@ -5,6 +5,7 @@
 
 %table.table.table-striped.table-bordered.table-responsive.m-x-t
   %thead
+    %th ID
     %th Date
     %th Title
     %th Type
@@ -16,6 +17,7 @@
     = simple_form_for @search, url: transactions_path, method: :get  do |f|
       %tr
         %td -
+        %td -
         %td= f.input_field :title_cont
         %td -
         %td= f.input_field :account_id_eq, as: :select, collection: Account.all.order(:name)
@@ -24,6 +26,7 @@
         %td= f.button :submit, 'Search', class: 'btn btn-default'
   - transactions.each do |transaction|
     %tr
+      %td= transaction.id
       %td= transaction.transaction_date
       %td= transaction.title
       %td.text-center= transaction.label
