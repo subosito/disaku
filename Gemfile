@@ -32,6 +32,7 @@ gem 'mab'
 gem 'rollbar'
 gem 'ransack'
 gem 'has_scope'
+gem 'squeel', require: false
 
 group :production do
   gem 'rails_12factor'
