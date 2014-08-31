@@ -9,7 +9,7 @@
     %th Title
     %th Type
     %th Account
-    %th.hidden-xs Category
+    %th Category
     %th Amount
     %th -
   %tbody
@@ -28,7 +28,7 @@
       %td= transaction.title
       %td.text-center= transaction.label
       %td= transaction.account_name
-      %td.hidden-xs= transaction.category_name
+      %td= transaction.category_name
       %td.text-right= transaction.amount
       %td.text-center= transaction.link_to_actions
 
