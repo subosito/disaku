@@ -4,11 +4,11 @@ module ApplicationHelper
   end
 
   def link_to_edit(object, link_path)
-    link_to(content_tag(:i, nil, class: 'icon-pencil'), link_path, class: 'btn btn-xs btn-info') if can? :edit, object
+    link_to(content_tag(:i, nil, class: 'fa fa-pencil'), link_path, class: 'btn btn-xs btn-info') if can? :edit, object
   end
 
   def link_to_delete(object, link_path)
-    link_to(content_tag(:i, nil, class: 'icon-trash'), link_path, class: 'btn btn-xs btn-danger', method: :delete, data: { confirm: "Are you sure?" }) if can? :delete, object
+    link_to(content_tag(:i, nil, class: 'fa fa-trash'), link_path, class: 'btn btn-xs btn-danger', method: :delete, data: { confirm: "Are you sure?" }) if can? :delete, object
   end
 
   def current_user_decorated
