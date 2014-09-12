@@ -1,12 +1,12 @@
-class TransferDecorator < ApplicationDecorator
+class TransferDecorator < CommonDecorator
   delegate_all
 
   def link_to_edit
-    h.link_to_edit(object, h.edit_transfer_path(object))
+    super(object, h.edit_transfer_path(object))
   end
 
   def link_to_delete
-    h.link_to_delete(object, h.transfer_path(object))
+    super(object, h.transfer_path(object))
   end
 
   def link_to_actions
@@ -14,6 +14,6 @@ class TransferDecorator < ApplicationDecorator
   end
 
   def amount
-    h.to_currency(object.amount)
+    to_currency(object.amount)
   end
 end

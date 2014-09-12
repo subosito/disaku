@@ -1,4 +1,4 @@
-class CategoryDecorator < ApplicationDecorator
+class CategoryDecorator < CommonDecorator
   delegate_all
 
   def label
@@ -6,11 +6,11 @@ class CategoryDecorator < ApplicationDecorator
   end
 
   def link_to_edit
-    h.link_to_edit(object, h.edit_category_path(object))
+    super(object, h.edit_category_path(object))
   end
 
   def link_to_delete
-    h.link_to_delete(object, h.category_path(object))
+    super(object, h.category_path(object))
   end
 
   def link_to_actions

@@ -1,21 +1,19 @@
 class ApplicationDecorator < Draper::Decorator
-  def total_expense
-    h.to_currency(object.total_expense)
-  end
-
-  def monthly_expense
-    h.to_currency(object.monthly_expense)
-  end
-
-  def total_income
-    h.to_currency(object.total_income)
-  end
-
-  def monthly_income
-    h.to_currency(object.monthly_income)
-  end
-
   def merge_links(links)
     links.reject{|el| el.blank? }.join(' ').html_safe
+  end
+
+  def to_currency(amount)
+    h.number_to_currency(amount, unit: 'Rp', precision: 0, format: "%u %n", separator: ',', delimiter: '.')
+  end
+
+  def link_to_edit(object, link_path)
+    return if h.cannot? :edit, object
+    h.link_to(h.content_tag(:i, nil, class: 'fa fa-pencil'), link_path, class: 'btn btn-xs btn-info')
+  end
+
+  def link_to_delete(object, link_path)
+    return if h.cannot?:delete, object
+    h.link_to(h.content_tag(:i, nil, class: 'fa fa-trash'), link_path, class: 'btn btn-xs btn-danger', method: :delete, data: { confirm: "Are you sure?" })
   end
 end
