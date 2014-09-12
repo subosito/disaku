@@ -23,7 +23,7 @@ gem 'kaminari-bootstrap'
 gem 'has_scope'
 gem 'devise'
 gem 'rolify'
-gem 'cancan'
+gem 'cancancan'
 gem 'draper'
 gem 'high_voltage'
 gem 'font-awesome-rails'
@@ -31,6 +31,7 @@ gem 'rails-settings-cached'
 gem 'mab'
 gem 'rollbar'
 gem 'ransack'
+gem 'responders'
 gem 'squeel', require: false
 
 group :production do
@@ -39,7 +40,7 @@ end
 
 group :test do
   gem 'factory_girl_rails'
-  gem 'database_cleaner'
+  gem 'database_cleaner', require: false
   gem 'shoulda'
   gem 'capybara'
   gem 'poltergeist'
@@ -47,6 +48,8 @@ group :test do
   gem 'fuubar'
   gem 'simplecov', require: false
   gem 'rr'
+  gem 'shoulda-matchers', require: false
+  gem 'forgery'
 end
 
 group :development do

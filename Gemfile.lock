@@ -45,7 +45,7 @@ GEM
     bullet (4.13.2)
       activesupport (>= 3.0.0)
       uniform_notifier (>= 1.6.0)
-    cancan (1.6.10)
+    cancancan (1.9.2)
     capistrano (3.2.1)
       i18n
       rake (>= 10.0.0)
@@ -103,6 +103,7 @@ GEM
       rails (>= 3, < 5)
     font-awesome-rails (4.2.0.0)
       railties (>= 3.2, < 5.0)
+    forgery (0.6.0)
     fuubar (2.0.0)
       rspec (~> 3.0)
       ruby-progressbar (~> 1.4)
@@ -296,7 +297,7 @@ DEPENDENCIES
   bootstrap-datepicker-rails
   bootstrap-sass
   bullet
-  cancan
+  cancancan
   capistrano
   capistrano-bundler
   capistrano-rails
@@ -309,6 +310,7 @@ DEPENDENCIES
   factory_girl_rails
   figaro
   font-awesome-rails
+  forgery
   fuubar
   haml
   haml-rails
@@ -331,12 +333,14 @@ DEPENDENCIES
   rails-settings-cached
   rails_12factor
   ransack
+  responders
   rolify
   rollbar
   rr
   rspec-rails
   sass-rails
   shoulda
+  shoulda-matchers
   simple_form
   simplecov
   spring

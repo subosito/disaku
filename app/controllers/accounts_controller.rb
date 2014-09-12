@@ -1,24 +1,27 @@
-class AccountsController < ResourcesController
-  actions :all, :except => [:show]
+class AccountsController < ApplicationController
+  load_and_authorize_resource
   decorates_assigned :account, :accounts
 
+  def index
+  end
+
   def create
-    create!{ accounts_path }
   end
 
-  def begin_of_association_chain
-    current_user
-  end
-
-  def permitted_params
-    params.permit(:account => [:name, :account_type, :initial_amount])
-  end
-
-  protected
-  def collection
-    get_collection_ivar || begin
-      set_collection_ivar(end_of_association_chain.order(:account_type, :name))
+  def update
+    if @account.update_attributes(account_params)
+      redirect_to({ action: :index }, notice: "Account has been saved!")
+    else
+      render :edit
     end
+  end
+
+  def destroy
+  end
+
+  private
+  def account_params
+    params.require(:account).permit(:name, :account_type, :initial_amount)
   end
 end
 
