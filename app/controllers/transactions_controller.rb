@@ -1,30 +1,34 @@
 class TransactionsController < ResourcesController
-  actions :all, :except => [:show]
+  load_and_authorize_resource
+  skip_load_resource only: :index
   decorates_assigned :transaction, :transactions
 
+  def index
+    @transactions = search.result
+  end
+
   def create
-    create!{ transactions_path }
+    @transaction.save
+    respond_with(@transaction, location: transactions_path)
   end
 
-  def begin_of_association_chain
-    current_user
+  def update
+    @transaction.update_attributes(transaction_params)
+    respond_with(@transaction, location: transactions_path)
   end
 
-  def permitted_params
-    params.permit(:transaction => [:title, :account_id, :category_id, :transaction_date, :amount, :comment])
+  def destroy
+    @transaction.destroy
+    respond_with(@transaction)
   end
 
-  def search_params
-    options     = super
-    options[:s] = 'transaction_date desc'
-    options
+  private
+  def transaction_params
+    params.require(:transaction).permit(:title, :account_id, :category_id, :transaction_date, :amount, :comment)
   end
 
-  def default_search_params
-    {
-      :transaction_date_gteq => date_range_start,
-      :transaction_date_lteq => date_range_end
-    }
+  def resource_class
+    apply_scopes(Transaction)
   end
 end
 

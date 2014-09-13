@@ -1,4 +1,4 @@
-class AccountsController < ApplicationController
+class AccountsController < ResourcesController
   load_and_authorize_resource
   decorates_assigned :account, :accounts
 

@@ -1,24 +1,28 @@
 class CategoriesController < ResourcesController
-  actions :all, :except => [:show]
+  load_and_authorize_resource
   decorates_assigned :category, :categories
 
+  def index
+  end
+
   def create
-    create!{ categories_path }
+    @category.save
+    respond_with(@category, location: categories_path)
   end
 
-  def begin_of_association_chain
-    current_user
+  def update
+    @category.update_attributes(category_params)
+    respond_with(@category, location: categories_path)
   end
 
-  def permitted_params
-    params.permit(:category => [:name, :category_type])
+  def destroy
+    @category.destroy
+    respond_with(@category)
   end
 
-  protected
-  def collection
-    get_collection_ivar || begin
-      set_collection_ivar(end_of_association_chain.order(:category_type, :name))
-    end
+  private
+  def category_params
+    params.require(:category).permit(:name, :category_type)
   end
 end
 
