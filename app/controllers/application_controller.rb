@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   before_filter :authenticate_user!
   before_filter :set_filter!
 
-  helper_method :date_range_start, :date_range_end
+  helper_method :date_range_start, :date_range_end, :current_locale
 
   rescue_from CanCan::AccessDenied do |exception|
     redirect_to :root, :alert => exception.message
@@ -30,5 +30,9 @@ class ApplicationController < ActionController::Base
 
   def date_range_end
     session[:date_range_end] ||= Date.today.end_of_month
+  end
+
+  def current_locale
+    current_user.settings.locale || :en
   end
 end

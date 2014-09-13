@@ -4,7 +4,7 @@ class ApplicationDecorator < Draper::Decorator
   end
 
   def to_currency(amount)
-    h.number_to_currency(amount, unit: 'Rp', precision: 0, format: "%u %n", separator: ',', delimiter: '.')
+    h.number_to_currency(amount, locale: h.current_locale)
   end
 
   def link_to_edit(object, link_path)

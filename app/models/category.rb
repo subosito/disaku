@@ -13,7 +13,7 @@ class Category < ActiveRecord::Base
 
   def self.grouped_options_for_select
     all.reduce({}) do |a, v|
-      (a[v.category_type] ||= []).push(v); a
+      (a[v.category_type.titleize] ||= []).push(v); a
     end
   end
 end
