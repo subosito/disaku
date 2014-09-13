@@ -6,17 +6,18 @@ class AccountsController < ApplicationController
   end
 
   def create
+    @account.save
+    respond_with(@account, location: accounts_path)
   end
 
   def update
-    if @account.update_attributes(account_params)
-      redirect_to({ action: :index }, notice: "Account has been saved!")
-    else
-      render :edit
-    end
+    @account.update_attributes(account_params)
+    respond_with(@account, location: accounts_path)
   end
 
   def destroy
+    @account.destroy
+    respond_with(@account)
   end
 
   private

@@ -1,5 +1,10 @@
 FactoryGirl.define do
+  sequence :name do |n|
+    "Account ##{n}"
+  end
+
   factory :account do
-    name { Forgery(:lorem_ipsum).word(random: true).titleize }
+    name
+    initial_amount { 10 }
   end
 end
