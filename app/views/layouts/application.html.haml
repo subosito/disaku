@@ -20,7 +20,7 @@
               = link_to t('app.name'), '#', class: 'navbar-brand'
               %nav#navbar-collapse.collapse.navbar-collapse
                 = semantic_navigation :main, config: :bootstrap, class: 'navbar-nav navbar-left'
-                = simple_form_for @filter, url: settings_transactions_path, method: :post, html: { class: 'navbar-form col-xs-6', role: 'search' } do |f|
+                = simple_form_for @filter, url: settings_transactions_path, method: :post, html: { class: 'navbar-form col-xs-12', role: 'search' } do |f|
                   .form-group
                     .input-daterange{ data: { behaviour: 'datepicker' } }
                       = f.input_field :date_start
