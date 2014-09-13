@@ -27,8 +27,14 @@ class TransactionsController < ResourcesController
     params.require(:transaction).permit(:title, :account_id, :category_id, :transaction_date, :amount, :comment)
   end
 
-  def resource_class
-    apply_scopes(Transaction)
+  def search_params
+    options = super
+    options[:s] = 'transaction_date desc'
+    options
+  end
+
+  def default_search_params
+    { transaction_date_gteq: date_range_start, transaction_date_lteq: date_range_end }
   end
 end
 

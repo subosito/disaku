@@ -17,6 +17,10 @@ class ResourcesController < ApplicationController
     @search ||= resource_class.search(search_params)
   end
 
+  def resource_class
+    apply_scopes(controller_name.classify.constantize)
+  end
+
   def search_params
     default_search_params.stringify_keys.merge(params.fetch(:q, {}))
   end
