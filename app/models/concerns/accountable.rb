@@ -1,41 +1,31 @@
 module Accountable
   extend ActiveSupport::Concern
 
-  def total_expense
-    transactions.total_amount(:expense)
-  end
-
-  def monthly_expense
-    transactions.with_transaction_type(:expense).date_range(*monthly_date_range).sum_amount
-  end
-
-  def expense(date_start, date_end)
-    transactions.with_transaction_type(:expense).date_range(date_start, date_end).sum_amount
-  end
-
-  def total_income
+  def total_incomes
     transactions.total_amount(:income)
   end
 
-  def monthly_income
-    transactions.with_transaction_type(:income).date_range(*monthly_date_range).sum_amount
+  def total_expenses
+    transactions.total_amount(:expense)
   end
 
-  def income(date_start, date_end)
+  def monthly_incomes
+    incomes_with_range(*monthly_date_range)
+  end
+
+  def monthly_expenses
+    expenses_with_range(*monthly_date_range)
+  end
+
+  def incomes_with_range(date_start, date_end)
     transactions.with_transaction_type(:income).date_range(date_start, date_end).sum_amount
   end
 
-  def incomes_with_date_range(date_start, date_end)
-    transactions.with_transaction_type(:income).date_range(date_start, date_end).sum_amount
-  end
-
-  def expenses_with_date_range(date_start, date_end)
+  def expenses_with_range(date_start, date_end)
     transactions.with_transaction_type(:expense).date_range(date_start, date_end).sum_amount
   end
 
-  private
   def monthly_date_range
-    today = Date.today
-    [today.beginning_of_month, today.end_of_month]
+    [Date.today.beginning_of_month, Date.today.end_of_month]
   end
 end

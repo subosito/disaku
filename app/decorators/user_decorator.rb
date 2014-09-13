@@ -1,12 +1,12 @@
-class UserDecorator < CommonDecorator
+class UserDecorator < AccountableDecorator
   delegate_all
 
-  def monthly_income
-    to_currency(object.monthly_income)
+  def monthly_incomes
+    to_currency(object.monthly_incomes)
   end
 
-  def monthly_expense
-    to_currency(object.monthly_expense)
+  def monthly_expenses
+    to_currency(object.monthly_expenses)
   end
 
   def available_cash

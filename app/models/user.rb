@@ -24,24 +24,24 @@ class User < ActiveRecord::Base
     !monthly_budget.zero?
   end
 
-  def total_balance
-    (total_assets + total_income) - total_expense
+  def total_balances
+    (total_assets + total_incomes) - total_expenses
   end
 
-  def total_income
-    accounts.map(&:total_income).inject(0, :+)
+  def total_incomes
+    accounts.map(&:total_incomes).inject(0, :+)
   end
 
-  def monthly_income
-    accounts.map(&:monthly_income).inject(0, :+)
+  def monthly_incomes
+    accounts.map(&:monthly_incomes).inject(0, :+)
   end
 
-  def total_expense
-    accounts.map(&:total_expense).inject(0, :+)
+  def total_expenses
+    accounts.map(&:total_expenses).inject(0, :+)
   end
 
-  def monthly_expense
-    accounts.map(&:monthly_expense).inject(0, :+)
+  def monthly_expenses
+    accounts.map(&:monthly_expenses).inject(0, :+)
   end
 
   def total_assets
@@ -49,7 +49,7 @@ class User < ActiveRecord::Base
   end
 
   def available_cash
-    accounts.where(:account_type => :cash).map(&:balance).inject(0, :+)
+    accounts.where(:account_type => :cash).map(&:total_balances).inject(0, :+)
   end
 end
 

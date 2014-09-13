@@ -30,7 +30,7 @@ class Transaction < ActiveRecord::Base
 
   scope :sum_amount, -> { sum(:amount) }
 
-  def self.total_amount(transaction_type)
+  scope :total_amount, ->(transaction_type) do
     with_transaction_type(transaction_type).sum_amount
   end
 end

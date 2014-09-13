@@ -1,4 +1,4 @@
-class CategoryDecorator < CommonDecorator
+class CategoryDecorator < AccountableDecorator
   delegate_all
 
   def label

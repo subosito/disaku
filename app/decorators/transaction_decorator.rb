@@ -1,4 +1,4 @@
-class TransactionDecorator < CommonDecorator
+class TransactionDecorator < ApplicationDecorator
   delegate_all
   decorates_association :category
 

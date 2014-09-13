@@ -1,12 +1,16 @@
-class AccountDecorator < CommonDecorator
+class AccountDecorator < AccountableDecorator
   delegate_all
 
-  def balance
-    to_currency(object.balance)
+  def balances_with_range
+    to_currency(object.balances_with_range(h.date_range_start, h.date_range_end))
   end
 
-  def balance_with_date_range
-    to_currency(object.balance_with_date_range(h.date_range_start, h.date_range_end))
+  def incomes_with_range
+    to_currency(object.incomes_with_range(h.date_range_start, h.date_range_end))
+  end
+
+  def expenses_with_range
+    to_currency(object.expenses_with_range(h.date_range_start, h.date_range_end))
   end
 
   def label

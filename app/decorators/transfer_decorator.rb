@@ -1,4 +1,4 @@
-class TransferDecorator < CommonDecorator
+class TransferDecorator < ApplicationDecorator
   delegate_all
 
   def link_to_edit
