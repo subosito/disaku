@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
   end
 
   def monthly_due_target
-    monthly_budget - monthly_expense
+    monthly_budget - monthly_expenses
   end
 
   def monthly_budget?
