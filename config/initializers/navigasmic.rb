@@ -71,8 +71,10 @@ Navigasmic.setup do |config|
   end
 
   config.semantic_navigation :authentication do |n|
-    n.item 'Login', proc{ new_user_session_path }, hidden_unless: proc { !user_signed_in? }
-    n.item 'Logout', proc{ destroy_user_session_path }, hidden_unless: proc { user_signed_in? }
+    n.group n.current_user.email do
+      n.item 'Settings', proc{ settings_path }
+      n.item 'Logout', proc{ destroy_user_session_path }
+    end
   end
 
   # Setting the Default Builder:

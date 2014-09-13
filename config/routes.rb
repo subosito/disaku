@@ -16,5 +16,7 @@ Disaku::Application.routes.draw do
     resources :transfers
   end
 
+  resource :settings, only: [:show, :update]
+
   root 'accounts#index'
 end

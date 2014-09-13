@@ -1,0 +1,5 @@
+.col-xs-6
+  = simple_form_for @setting, url: settings_path, method: :put do |f|
+    = f.input :locale, collection: I18n.available_locales.sort, include_blank: false
+    = f.input :monthly_budget
+    = f.submit "Save", class: "btn btn-primary"
