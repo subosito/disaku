@@ -1,8 +1,10 @@
 class CategoriesController < ResourcesController
   load_and_authorize_resource
+  skip_load_resource only: :index
   decorates_assigned :category, :categories
 
   def index
+    @categories = current_user.categories.date_range(date_range_start, date_range_end).group('categories.id')
   end
 
   def create

@@ -9,12 +9,20 @@ module Accountable
     transactions.with_transaction_type(:expense).date_range(*monthly_date_range).sum_amount
   end
 
+  def expense(date_start, date_end)
+    transactions.with_transaction_type(:expense).date_range(date_start, date_end).sum_amount
+  end
+
   def total_income
     transactions.total_amount(:income)
   end
 
   def monthly_income
     transactions.with_transaction_type(:income).date_range(*monthly_date_range).sum_amount
+  end
+
+  def income(date_start, date_end)
+    transactions.with_transaction_type(:income).date_range(date_start, date_end).sum_amount
   end
 
   private

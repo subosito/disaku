@@ -32,5 +32,9 @@ class TransfersController < ResourcesController
     options[:s] = 'transfer_date desc'
     options
   end
+
+  def default_search_params
+    { transfer_date_gteq: date_range_start, transfer_date_lteq: date_range_end }
+  end
 end
 

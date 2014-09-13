@@ -7,11 +7,16 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_filter :authenticate_user!
+  before_filter :set_filter!
 
   helper_method :date_range_start, :date_range_end
 
   rescue_from CanCan::AccessDenied do |exception|
     redirect_to :root, :alert => exception.message
+  end
+
+  def set_filter!
+    @filter = Filter.new(date_start: date_range_start, date_end: date_range_end)
   end
 
   protected

@@ -17,6 +17,14 @@ class CategoryDecorator < CommonDecorator
     merge_links([ link_to_edit, link_to_delete ])
   end
 
+  def expense
+    to_currency(object.expense(h.date_range_start, h.date_range_end))
+  end
+
+  def income
+    to_currency(object.income(h.date_range_start, h.date_range_end))
+  end
+
   private
   def label_class
     case object.category_type

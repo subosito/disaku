@@ -14,4 +14,12 @@ class CommonDecorator < ApplicationDecorator
   def monthly_income
     to_currency(object.monthly_income)
   end
+
+  def expense
+    to_currency(object.expense(h.date_range_start, h.date_range_end))
+  end
+
+  def income
+    to_currency(object.income(h.date_range_start, h.date_range_end))
+  end
 end

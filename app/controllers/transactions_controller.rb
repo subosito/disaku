@@ -1,6 +1,6 @@
 class TransactionsController < ResourcesController
   load_and_authorize_resource
-  skip_load_resource only: :index
+  skip_load_resource only: [:index, :settings]
   decorates_assigned :transaction, :transactions
 
   def index
@@ -20,6 +20,13 @@ class TransactionsController < ResourcesController
   def destroy
     @transaction.destroy
     respond_with(@transaction)
+  end
+
+  def settings
+    fparams = params.fetch(:filter, {})
+    session[:date_range_start] = fparams.fetch(:date_start, Date.today.beginning_of_month)
+    session[:date_range_end]   = fparams.fetch(:date_end, Date.today.end_of_month)
+    redirect_to :transactions
   end
 
   private

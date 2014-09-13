@@ -8,7 +8,11 @@ Disaku::Application.routes.draw do
   scope :except => [:show] do
     resources :accounts
     resources :categories
-    resources :transactions
+    resources :transactions do
+      collection do
+        post :settings
+      end
+    end
     resources :transfers
   end
 
