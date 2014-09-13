@@ -25,6 +25,14 @@ module Accountable
     transactions.with_transaction_type(:income).date_range(date_start, date_end).sum_amount
   end
 
+  def incomes_with_date_range(date_start, date_end)
+    transactions.with_transaction_type(:income).date_range(date_start, date_end).sum_amount
+  end
+
+  def expenses_with_date_range(date_start, date_end)
+    transactions.with_transaction_type(:expense).date_range(date_start, date_end).sum_amount
+  end
+
   private
   def monthly_date_range
     today = Date.today

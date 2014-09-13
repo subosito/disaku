@@ -5,6 +5,10 @@ class AccountDecorator < CommonDecorator
     to_currency(object.balance)
   end
 
+  def balance_with_date_range
+    to_currency(object.balance_with_date_range(h.date_range_start, h.date_range_end))
+  end
+
   def label
     h.content_tag :span, object.account_type, class: "label #{label_class}"
   end

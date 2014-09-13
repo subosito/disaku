@@ -23,4 +23,22 @@ class Account < ActiveRecord::Base
   def total_sent_transfers
     sent_transfers.sum('amount')
   end
+
+  def balance_with_date_range(date_start, date_end)
+    transfers_received = received_transfers_with_date_range(date_start, date_end).sum(:amount)
+    transfers_sent = sent_transfers_with_date_range(date_start, date_end).sum(:amount)
+
+    incomes  = incomes_with_date_range(date_start, date_end)
+    expenses = expenses_with_date_range(date_start, date_end)
+
+    initial_amount + (transfers_received - transfers_sent) + (incomes - expenses)
+  end
+
+  def received_transfers_with_date_range(date_start, date_end)
+    received_transfers.date_range(date_start, date_end)
+  end
+
+  def sent_transfers_with_date_range(date_start, date_end)
+    sent_transfers.date_range(date_start, date_end)
+  end
 end
