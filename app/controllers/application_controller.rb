@@ -34,10 +34,12 @@ class ApplicationController < ActionController::Base
   end
 
   def current_locale
+    return :en if current_user.nil?
     current_user.settings.locale || :en
   end
 
   def current_display_locale
+    return :en if current_user.nil?
     current_user.settings.display_locale || :en
   end
 
