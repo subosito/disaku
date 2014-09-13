@@ -4,7 +4,7 @@ class CategoriesController < ResourcesController
   decorates_assigned :category, :categories
 
   def index
-    @categories = current_user.categories.date_range(date_range_start, date_range_end).group('categories.id')
+    @categories = current_user.categories.date_range(date_range_start, date_range_end).group('categories.id').order(:category_type, :name)
   end
 
   def create

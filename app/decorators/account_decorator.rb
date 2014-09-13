@@ -1,6 +1,10 @@
 class AccountDecorator < AccountableDecorator
   delegate_all
 
+  def total_balances
+    to_currency(object.total_balances)
+  end
+
   def balances_with_range
     to_currency(object.balances_with_range(h.date_range_start, h.date_range_end))
   end

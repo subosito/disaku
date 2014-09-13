@@ -1,8 +1,10 @@
 class AccountsController < ResourcesController
   load_and_authorize_resource
+  skip_load_resource only: :index
   decorates_assigned :account, :accounts
 
   def index
+    @accounts ||= current_user.accounts.order(:account_type, :name)
   end
 
   def create
