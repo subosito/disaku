@@ -1,0 +1,31 @@
+id:
+  accounts:
+    index:
+      title: 'Akun'
+    new:
+      title: 'Akun Baru'
+  categories:
+    index:
+      title: 'Kategori'
+    new:
+      title: 'Kategori Baru'
+  transactions:
+    index:
+      title: 'Transaksi'
+    new:
+      title: 'Transaksi Baru'
+  transfers:
+    index:
+      title: 'Transfer'
+    new:
+      title: 'Transfer Baru'
+  devise:
+    sessions:
+      new:
+        title: 'Login'
+    registrations:
+      new:
+        title: 'Daftar'
+  settings:
+    show:
+      title: "Pengaturan"

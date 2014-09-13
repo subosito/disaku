@@ -1,5 +1,14 @@
 id:
- number:
+  app:
+    name: 'Disaku'
+  term:
+    accounts: Akun
+    categories: Kategori
+    transactions: Transaksi
+    transfers: Transfer
+    settings: Pengaturan
+    logout: Keluar
+  number:
     currency:
       format:
         delimiter: .

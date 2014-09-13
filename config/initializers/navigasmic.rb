@@ -27,10 +27,10 @@ Navigasmic.setup do |config|
   # Here's a basic example:
   config.semantic_navigation :main do |n|
 
-    n.item 'Accounts', proc{ accounts_path }
-    n.item 'Categories', proc{ categories_path }
-    n.item 'Transactions', proc{ transactions_path }
-    n.item 'Transfers', proc{ transfers_path }
+    n.item n.t('term.accounts'), proc{ accounts_path }
+    n.item n.t('term.categories'), proc{ categories_path }
+    n.item n.t('term.transactions'), proc{ transactions_path }
+    n.item n.t('term.transfers'), proc{ transfers_path }
 
     # Groups and Items:
     #
@@ -72,8 +72,8 @@ Navigasmic.setup do |config|
 
   config.semantic_navigation :authentication do |n|
     n.group n.current_user.email do
-      n.item 'Settings', proc{ settings_path }
-      n.item 'Logout', proc{ destroy_user_session_path }
+      n.item n.t('term.settings'), proc{ settings_path }
+      n.item n.t('term.logout'), proc{ destroy_user_session_path }
     end
   end
 

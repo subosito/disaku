@@ -1,0 +1,10 @@
+id:
+  flash:
+    actions:
+      create:
+        notice: '%{resource_name} telah sukses dibuat.'
+      update:
+        notice: '%{resource_name} telah sukses diperbaharui.'
+      destroy:
+        notice: '%{resource_name} telah sukses dihapus.'
+        alert: '%{resource_name} tidak bisa dihapus.'

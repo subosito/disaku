@@ -1,30 +1,10 @@
 en:
   app:
     name: 'Disaku'
-  accounts:
-    index:
-      title: 'Accounts'
-    new:
-      title: 'New Account'
-  categories:
-    index:
-      title: 'Categories'
-    new:
-      title: 'New Category'
-  transactions:
-    index:
-      title: 'Transactions'
-    new:
-      title: 'New Transaction'
-  transfers:
-    index:
-      title: 'Transfers'
-    new:
-      title: 'New Transfer'
-  devise:
-    sessions:
-      new:
-        title: 'Login'
-    registrations:
-      new:
-        title: 'Register'
+  term:
+    accounts: Accounts
+    categories: Categories
+    transactions: Transactions
+    transfers: Transfers
+    settings: Settings
+    logout: Logout
