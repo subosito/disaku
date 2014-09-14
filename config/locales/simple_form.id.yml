@@ -13,7 +13,7 @@ id:
     labels:
       user_setting:
         locale: "Format Lokal"
-        display_locale: "Bahasa Tampilan"
+        language: "Bahasa"
         monthly_budget: "Jatah per Bulan"
     # Labels and hints examples
     # labels:

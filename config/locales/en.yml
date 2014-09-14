@@ -1,6 +1,9 @@
 en:
   app:
-    name: 'Disaku'
+    name: Disaku
+  language:
+    en: English
+    id: Bahasa Indonesia
   term:
     accounts: Accounts
     categories: Categories

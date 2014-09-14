@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
 
   before_filter :authenticate_user!
   before_filter :set_filter!
-  before_action :set_display_locale!
+  before_action :set_language!
 
   helper_method :date_range_start, :date_range_end, :current_locale
 
@@ -38,12 +38,12 @@ class ApplicationController < ActionController::Base
     current_user.settings.locale || :en
   end
 
-  def current_display_locale
+  def current_language
     return :en if current_user.nil?
-    current_user.settings.display_locale || :en
+    current_user.settings.language || :en
   end
 
-  def set_display_locale!
-    I18n.locale = current_display_locale
+  def set_language!
+    I18n.locale = current_language
   end
 end
