@@ -6,15 +6,15 @@
     .clearfix
     = f.input_field :transaction_date, order: [:day, :month, :year]
   .row
-    = f.association :account, include_blank: false, wrapper_html: { class: 'col-xs-4' }
+    = f.association :account, include_blank: false, wrapper_html: { class: 'col-xs-5 col-md-4' }
   .row
     = f.association :category, include_blank: false,
       collection: current_user.categories.order(:name).grouped_options_for_select,
       as: :grouped_select, group_method: :last,
-      wrapper_html: { class: 'col-xs-4' }
+      wrapper_html: { class: 'col-xs-6 col-md-4' }
   .row
     = f.input :amount, wrapper_html: { class: 'col-xs-6' }
   .row
-    = f.input :comment, wrapper_html: { class: 'col-xs-10' }, input_html: { rows: 4 }
+    = f.input :comment, wrapper_html: { class: 'col-xs-12 col-md-10' }, input_html: { rows: 4 }
   .form-group
     = f.button :submit, class: 'btn-primary'
