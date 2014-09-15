@@ -29,3 +29,13 @@ en:
   settings:
     show:
       title: "Settings"
+  devise:
+    passwords:
+      new:
+        title: "Forgot your password?"
+    registrations:
+      new:
+        title: "Registration"
+    sessions:
+      new:
+        title: "Login"
