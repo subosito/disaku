@@ -13,7 +13,10 @@ Disaku::Application.routes.draw do
   end
 
   resource :settings, only: [:show, :update] do
-    post :filters, on: :collection
+    collection do
+      post :filters
+      patch :password
+    end
   end
 
   root 'accounts#index'
