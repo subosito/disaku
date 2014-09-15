@@ -8,15 +8,13 @@ Disaku::Application.routes.draw do
   scope :except => [:show] do
     resources :accounts
     resources :categories
-    resources :transactions do
-      collection do
-        post :settings
-      end
-    end
+    resources :transactions
     resources :transfers
   end
 
-  resource :settings, only: [:show, :update]
+  resource :settings, only: [:show, :update] do
+    post :filters, on: :collection
+  end
 
   root 'accounts#index'
 end

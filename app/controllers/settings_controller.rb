@@ -15,4 +15,11 @@ class SettingsController < ApplicationController
 
     redirect_to settings_path, notice: "Settings Saved!"
   end
+
+  def filters
+    fparams = params.fetch(:filter, {})
+    session[:date_range_start] = fparams.fetch(:date_start, Date.today.beginning_of_month)
+    session[:date_range_end]   = fparams.fetch(:date_end, Date.today.end_of_month)
+    redirect_to :transactions
+  end
 end
