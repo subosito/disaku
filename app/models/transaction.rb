@@ -8,9 +8,9 @@ class Transaction < ActiveRecord::Base
 
   alias_method :transaction_type, :category_type
 
-  validates :transaction_date, presence: true
   validates :title, presence: true
   validates :amount, presence: true
+  validates :transaction_date, presence: true
 
   scope :date_range, ->(date_start, date_end) do
     where(arel_table[:transaction_date].gteq(date_start)).where(arel_table[:transaction_date].lteq(date_end))
