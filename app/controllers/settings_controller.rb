@@ -6,9 +6,9 @@ class SettingsController < ApplicationController
 
   def update
     sparams = params.fetch(:user_setting, {})
-    current_user.settings.locale = (sparams[:locale] || 'en').to_sym
-    current_user.settings.language = (sparams[:language] || 'en').to_sym
-    current_user.settings.monthly_budget = (sparams[:monthly_budget] || '0').to_i
+    current_user.settings.locale = (sparams[:locale] || Setting.locale).to_sym
+    current_user.settings.language = (sparams[:language] || Setting.language).to_sym
+    current_user.settings.monthly_budget = (sparams[:monthly_budget] || Setting.monthly_budget).to_i
 
     redirect_to settings_path, notice: "Settings Saved!"
   end
@@ -38,9 +38,9 @@ class SettingsController < ApplicationController
 
   def user_settings
     UserSetting.new({
-      locale: current_user.settings.locale || :en,
-      language: current_user.settings.language || :en,
-      monthly_budget: current_user.settings.monthly_budget || 0
+      locale: current_user.settings.locale,
+      language: current_user.settings.language,
+      monthly_budget: current_user.settings.monthly_budget,
     })
   end
 end
