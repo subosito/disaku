@@ -29,3 +29,7 @@ id:
   settings:
     show:
       title: "Pengaturan"
+    update:
+      title: "Pengaturan"
+    password:
+      title: "Pengaturan"

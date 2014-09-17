@@ -40,8 +40,4 @@ module ApplicationHelper
   def date_range_end_formatted
     format_datepicker(date_range_end)
   end
-
-  def languages
-    [[t('language.en'), :en], [t('language.id'), :id]]
-  end
 end

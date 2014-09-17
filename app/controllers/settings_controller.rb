@@ -5,12 +5,19 @@ class SettingsController < ApplicationController
   end
 
   def update
-    sparams = params.fetch(:user_setting, {})
-    current_user.settings.locale = (sparams[:locale] || Setting.locale).to_sym
-    current_user.settings.language = (sparams[:language] || Setting.language).to_sym
-    current_user.settings.monthly_budget = (sparams[:monthly_budget] || Setting.monthly_budget).to_i
+    setting = UserSetting.new(params.fetch(:user_setting, {}))
 
-    redirect_to settings_path, notice: "Settings Saved!"
+    if setting.valid?
+      current_user.settings.locale = (setting.locale || Setting.locale).to_sym
+      current_user.settings.language = (setting.language || Setting.language).to_sym
+      current_user.settings.monthly_budget = (setting.monthly_budget || Setting.monthly_budget).to_i
+
+      redirect_to settings_path, notice: "Settings Saved!"
+    else
+      @user = current_user
+      @setting = setting
+      render :show
+    end
   end
 
   def filters

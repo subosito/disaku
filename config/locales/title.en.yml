@@ -42,5 +42,7 @@ en:
   settings:
     show:
       title: "Settings"
+    update:
+      title: "Settings"
     password:
       title: "Settings"
