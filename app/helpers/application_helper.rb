@@ -40,4 +40,8 @@ module ApplicationHelper
   def date_range_end_formatted
     format_datepicker(date_range_end)
   end
+
+  def current_language
+    current_user.present? ? current_user.settings.language : Setting.language
+  end
 end
