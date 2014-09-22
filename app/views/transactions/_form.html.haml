@@ -6,10 +6,13 @@
     .clearfix
     = f.input_field :transaction_date, order: [:day, :month, :year]
   .row
-    = f.association :account, include_blank: false, wrapper_html: { class: 'col-xs-5 col-md-4' }
+    = f.association :account, include_blank: false,
+      collection: current_user.accounts_grouped_options,
+      as: :grouped_select, group_method: :last,
+      wrapper_html: { class: 'col-xs-5 col-md-4' }
   .row
     = f.association :category, include_blank: false,
-      collection: current_user.categories.order(:name).grouped_options_for_select,
+      collection: current_user.categories_grouped_options,
       as: :grouped_select, group_method: :last,
       wrapper_html: { class: 'col-xs-6 col-md-4' }
   .row
