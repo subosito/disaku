@@ -1,20 +1,20 @@
 .row
-  - if current_user_decorated.monthly_budget?
+  - if current_user.monthly_budget?
     .col-md-8.col-md-offset-4
       .jumbotron.text-center
-        %h1= current_user_decorated.monthly_due_target
+        %h1= current_user.monthly_due_target
 
   .col-md-6.col-md-offset-6
     %table.table.table-striped
       %tbody
         %tr
           %td Monthly Income
-          %td.text-right= current_user_decorated.monthly_incomes
+          %td.text-right= current_user.monthly_incomes
 
         %tr
           %td Monthly Expense
-          %td.text-right= current_user_decorated.monthly_expenses
+          %td.text-right= current_user.monthly_expenses
 
         %tr
           %td Available Cash
-          %td.text-right= current_user_decorated.available_cash
+          %td.text-right= current_user.available_cash

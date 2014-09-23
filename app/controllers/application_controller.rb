@@ -33,10 +33,6 @@ class ApplicationController < ActionController::Base
     session[:date_range_end] ||= Date.today.end_of_month
   end
 
-  def current_user
-    UserDecorator.decorate(super) unless super.nil?
-  end
-
   def current_locale
     return :en if current_user.nil?
     current_user.settings.locale || :en

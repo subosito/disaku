@@ -1,7 +1,7 @@
 module ApplicationHelper
-  def current_user_decorated
+  def current_user
     if user_signed_in?
-      @current_user_decorated ||= UserDecorator.decorate(current_user)
+      @current_user_decorated ||= UserDecorator.decorate(@current_user)
     end
   end
 
