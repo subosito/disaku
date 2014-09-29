@@ -17,6 +17,10 @@ class CategoryDecorator < AccountableDecorator
     merge_links([ link_to_edit, link_to_delete ])
   end
 
+  def link_to_transactions
+    h.link_to object.name, h.transactions_path(q: { category_id_eq: object.id })
+  end
+
   def expense
     to_currency(object.expense(h.date_range_start, h.date_range_end))
   end

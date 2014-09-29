@@ -9,7 +9,7 @@
     %th -
   - categories.each do |category|
     %tr
-      %td= category.name
+      %td= category.link_to_transactions
       %td.text-center= category.label
       %td.text-right= category.incomes_with_range
       %td.text-right= category.expenses_with_range

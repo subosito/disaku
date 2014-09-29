@@ -31,6 +31,12 @@
       %td= transaction.category_name
       %td.text-right= transaction.amount
       %td.text-center= transaction.link_to_actions
+  %tr
+    %td{ colspan: 2 }
+    %td TOTAL
+    %td{ colspan: 3 }
+    %td.text-right= to_currency(transactions.map{ |t| t.object.amount }.inject(0, :+))
+    %td
 
 .text-center
   = paginate @transactions

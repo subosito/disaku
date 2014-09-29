@@ -44,4 +44,8 @@ module ApplicationHelper
   def current_language
     current_user.present? ? current_user.settings.language : Setting.language
   end
+
+  def to_currency(amount)
+    number_to_currency(amount, locale: current_locale)
+  end
 end
